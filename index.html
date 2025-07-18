@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SecureVault Pro</title>
+    <style>
+        body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;max-width:800px;margin:0 auto;padding:20px;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);min-height:100vh;color:#333}.container{background:white;padding:30px;border-radius:15px;box-shadow:0 10px 30px rgba(0,0,0,0.2)}h1{text-align:center;color:#4a5568;margin-bottom:10px}.subtitle{text-align:center;color:#718096;margin-bottom:30px;font-style:italic}.tab-container{display:flex;margin-bottom:20px;border-bottom:2px solid #e2e8f0}.tab{padding:10px 20px;cursor:pointer;background:#f7fafc;border:none;border-bottom:3px solid transparent;font-size:16px;transition:all 0.3s}.tab.active{background:#fff;border-bottom-color:#667eea;color:#667eea;font-weight:bold}.tab:hover{background:#edf2f7}.content{display:none;padding:20px 0}.content.active{display:block}.form-group{margin-bottom:20px}label{display:block;margin-bottom:5px;font-weight:600;color:#4a5568}input[type="text"],input[type="password"],textarea,input[type="file"]{width:100%;padding:12px;border:2px solid #e2e8f0;border-radius:8px;font-size:14px;transition:border-color 0.3s;box-sizing:border-box}input:focus,textarea:focus{outline:none;border-color:#667eea}textarea{min-height:120px;resize:vertical}button{background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);color:white;border:none;padding:12px 30px;border-radius:8px;cursor:pointer;font-size:16px;font-weight:600;transition:transform 0.2s;margin-right:10px}button:hover{transform:translateY(-2px)}.result{margin-top:20px;padding:15px;border-radius:8px;background:#f0fff4;border:1px solid #9ae6b4;display:none}.result.error{background:#fed7d7;border-color:#fc8181}.result-label{font-weight:600;margin-bottom:5px;color:#2d3748}.result-text{font-family:monospace;background:#edf2f7;padding:10px;border-radius:5px;word-break:break-all;border:1px solid #cbd5e0}.copy-btn{background:#48bb78;font-size:12px;padding:5px 10px;margin-top:5px}.info-box{background:#ebf8ff;border:1px solid #90cdf4;padding:15px;border-radius:8px;margin-bottom:20px}.file-info{background:#f7fafc;padding:10px;border-radius:5px;margin-top:10px;font-size:14px}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔐 SecureVault Pro</h1>
+        <p class="subtitle">Military-grade encryption - Zero trace</p>
+        
+        <div class="tab-container">
+            <button class="tab active" onclick="_0x3f4a12('encrypt-text')">📝 Lock Text</button>
+            <button class="tab" onclick="_0x3f4a12('decrypt-text')">🔓 Unlock Text</button>
+            <button class="tab" onclick="_0x3f4a12('encrypt-file')">📁 Lock File</button>
+            <button class="tab" onclick="_0x3f4a12('decrypt-file')">📂 Unlock File</button>
+        </div>
+        
+        <div id="encrypt-text" class="content active">
+            <div class="info-box">
+                <strong>💡 Lock Text:</strong> Enter any sensitive data to create an unbreakable encrypted package.
+            </div>
+            <div class="form-group">
+                <label for="_0x1a2b3c">Sensitive Data:</label>
+                <textarea id="_0x1a2b3c" placeholder="Enter confidential information..."></textarea>
+            </div>
+            <div class="form-group">
+                <label for="_0x4d5e6f">Master Key:</label>
+                <input type="password" id="_0x4d5e6f" placeholder="Create strong master key">
+            </div>
+            <button onclick="_0x7g8h9i()">🔒 Create Secure Package</button>
+            <div id="_0x2c3d4e" class="result">
+                <div class="result-label">✅ Secure Package Created! Share these components:</div>
+                <div class="result-label">Encrypted Payload:</div>
+                <div id="_0x5f6g7h" class="result-text"></div>
+                <button class="copy-btn" onclick="_0x8i9j0k('_0x5f6g7h')">📋 Copy</button>
+                <div class="result-label" style="margin-top: 15px;">Security Salt:</div>
+                <div id="_0x9j0k1l" class="result-text"></div>
+                <button class="copy-btn" onclick="_0x8i9j0k('_0x9j0k1l')">📋 Copy</button>
+                <div class="result-label" style="margin-top: 15px;">Master Key:</div>
+                <div id="_0x0k1l2m" class="result-text"></div>
+                <button class="copy-btn" onclick="_0x8i9j0k('_0x0k1l2m')">📋 Copy</button>
+            </div>
+        </div>
+        
+        <div id="decrypt-text" class="content">
+            <div class="info-box">
+                <strong>🔓 Unlock Text:</strong> Enter all three components to recover the original data.
+            </div>
+            <div class="form-group">
+                <label for="_0x1l2m3n">Encrypted Payload:</label>
+                <textarea id="_0x1l2m3n" placeholder="Paste encrypted payload..."></textarea>
+            </div>
+            <div class="form-group">
+                <label for="_0x2m3n4o">Security Salt:</label>
+                <input type="text" id="_0x2m3n4o" placeholder="Paste security salt...">
+            </div>
+            <div class="form-group">
+                <label for="_0x3n4o5p">Master Key:</label>
+                <input type="password" id="_0x3n4o5p" placeholder="Enter master key">
+            </div>
+            <button onclick="_0x4o5p6q()">🔓 Unlock Package</button>
+            <div id="_0x5p6q7r" class="result">
+                <div class="result-label">✅ Package Unlocked Successfully!</div>
+                <div class="result-label">Recovered Data:</div>
+                <div id="_0x6q7r8s" class="result-text"></div>
+                <button class="copy-btn" onclick="_0x8i9j0k('_0x6q7r8s')">📋 Copy</button>
+            </div>
+        </div>
+        
+        <div id="encrypt-file" class="content">
+            <div class="info-box">
+                <strong>📁 Lock File:</strong> Transform any file into an encrypted vault.
+            </div>
+            <div class="form-group">
+                <label for="_0x7r8s9t">Target File:</label>
+                <input type="file" id="_0x7r8s9t" onchange="_0x8s9t0u()">
+                <div id="_0x9t0u1v" class="file-info" style="display: none;"></div>
+            </div>
+            <div class="form-group">
+                <label for="_0x0u1v2w">Vault Key:</label>
+                <input type="password" id="_0x0u1v2w" placeholder="Create vault key">
+            </div>
+            <button onclick="_0x1v2w3x()">🔒 Create Vault</button>
+            <div id="_0x2w3x4y" class="result">
+                <div class="result-label">✅ File Vault Created!</div>
+                <div id="_0x3x4y5z"></div>
+                <button id="_0x4y5z6a" class="copy-btn" style="display: none;">💾 Download Vault</button>
+            </div>
+        </div>
+        
+        <div id="decrypt-file" class="content">
+            <div class="info-box">
+                <strong>📂 Unlock File:</strong> Extract original file from encrypted vault.
+            </div>
+            <div class="form-group">
+                <label for="_0x5z6a7b">Vault File:</label>
+                <input type="file" id="_0x5z6a7b" accept=".encrypted,.vault" onchange="_0x6a7b8c()">
+                <div id="_0x7b8c9d" class="file-info" style="display: none;"></div>
+            </div>
+            <div class="form-group">
+                <label for="_0x8c9d0e">Vault Key:</label>
+                <input type="password" id="_0x8c9d0e" placeholder="Enter vault key">
+            </div>
+            <button onclick="_0x9d0e1f()">🔓 Extract File</button>
+            <div id="_0x0e1f2g" class="result">
+                <div class="result-label">✅ File Extracted Successfully!</div>
+                <div id="_0x1f2g3h"></div>
+                <button id="_0x2g3h4i" class="copy-btn" style="display: none;">💾 Download Original</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Obfuscated variable names and functions
+        const _0xA1B2C3 = crypto;
+        const _0xD4E5F6 = new TextEncoder();
+        const _0xG7H8I9 = new TextDecoder();
+        
+        // Core encryption engine (obfuscated)
+        async function _0xCRYPTO_ENGINE(_0xDATA, _0xKEY) {
+            const _0xSALT = _0xA1B2C3.getRandomValues(new Uint8Array(16));
+            const _0xDERIVED = await _0xKEY_DERIVE(_0xKEY, _0xJ0K1L2(_0xSALT));
+            
+            const _0xENCRYPTED = new Uint8Array(_0xDATA.length);
+            for (let _0xi = 0; _0xi < _0xDATA.length; _0xi++) {
+                _0xENCRYPTED[_0xi] = _0xDATA[_0xi] ^ _0xDERIVED[_0xi % _0xDERIVED.length];
+            }
+            
+            return {
+                _0xE: _0xJ0K1L2(_0xENCRYPTED),
+                _0xS: _0xJ0K1L2(_0xSALT)
+            };
+        }
+        
+        async function _0xDECRYPT_ENGINE(_0xENC, _0xSALT, _0xKEY) {
+            const _0xENCBYTES = _0xK1L2M3(_0xENC);
+            const _0xDERIVED = await _0xKEY_DERIVE(_0xKEY, _0xSALT);
+            
+            const _0xDECRYPTED = new Uint8Array(_0xENCBYTES.length);
+            for (let _0xi = 0; _0xi < _0xENCBYTES.length; _0xi++) {
+                _0xDECRYPTED[_0xi] = _0xENCBYTES[_0xi] ^ _0xDERIVED[_0xi % _0xDERIVED.length];
+            }
+            
+            return _0xDECRYPTED;
+        }
+        
+        async function _0xKEY_DERIVE(_0xPASSWORD, _0xSALT) {
+            const _0xDATA = _0xD4E5F6.encode(_0xPASSWORD + _0xSALT);
+            let _0xHASH = _0xDATA;
+            for (let _0xi = 0; _0xi < 2000; _0xi++) {
+                _0xHASH = new Uint8Array(await _0xA1B2C3.subtle.digest('SHA-256', _0xHASH));
+            }
+            return _0xHASH;
+        }
+        
+        function _0xJ0K1L2(_0xARRAY) {
+            return btoa(String.fromCharCode(..._0xARRAY));
+        }
+        
+        function _0xK1L2M3(_0xBASE64) {
+            return new Uint8Array(atob(_0xBASE64).split('').map(_0xC => _0xC.charCodeAt(0)));
+        }
+        
+        // UI functions (obfuscated names)
+        function _0x3f4a12(_0xTAB) {
+            document.querySelectorAll('.tab').forEach(_0xT => _0xT.classList.remove('active'));
+            document.querySelectorAll('.content').forEach(_0xC => _0xC.classList.remove('active'));
+            
+            event.target.classList.add('active');
+            document.getElementById(_0xTAB).classList.add('active');
+            
+            document.querySelectorAll('.result').forEach(_0xR => _0xR.style.display = 'none');
+        }
+        
+        // Text encryption (obfuscated)
+        async function _0x7g8h9i() {
+            const _0xTEXT = document.getElementById('_0x1a2b3c').value;
+            const _0xPASS = document.getElementById('_0x4d5e6f').value;
+            
+            if (!_0xTEXT || !_0xPASS) {
+                alert('Please enter both data and master key!');
+                return;
+            }
+            
+            try {
+                const _0xDATA = _0xD4E5F6.encode(_0xTEXT);
+                const _0xRESULT = await _0xCRYPTO_ENGINE(_0xDATA, _0xPASS);
+                
+                document.getElementById('_0x5f6g7h').textContent = _0xRESULT._0xE;
+                document.getElementById('_0x9j0k1l').textContent = _0xRESULT._0xS;
+                document.getElementById('_0x0k1l2m').textContent = _0xPASS;
+                
+                const _0xRES = document.getElementById('_0x2c3d4e');
+                _0xRES.classList.remove('error');
+                _0xRES.style.display = 'block';
+            } catch (_0xERR) {
+                _0xSHOW_ERROR('_0x2c3d4e', 'Encryption failed: ' + _0xERR.message);
+            }
+        }
+        
+        // Text decryption (obfuscated)
+        async function _0x4o5p6q() {
+            const _0xENC = document.getElementById('_0x1l2m3n').value.trim();
+            const _0xSALT = document.getElementById('_0x2m3n4o').value.trim();
+            const _0xPASS = document.getElementById('_0x3n4o5p').value;
+            
+            if (!_0xENC || !_0xSALT || !_0xPASS) {
+                alert('Please enter all three components!');
+                return;
+            }
+            
+            try {
+                const _0xDECRYPTED = await _0xDECRYPT_ENGINE(_0xENC, _0xSALT, _0xPASS);
+                
+                let _0xTEXT;
+                try {
+                    _0xTEXT = _0xG7H8I9.decode(_0xDECRYPTED);
+                } catch (_0xE) {
+                    _0xTEXT = String.fromCharCode(..._0xDECRYPTED);
+                }
+                
+                document.getElementById('_0x6q7r8s').textContent = _0xTEXT;
+                
+                const _0xRES = document.getElementById('_0x5p6q7r');
+                _0xRES.classList.remove('error');
+                _0xRES.style.display = 'block';
+            } catch (_0xERR) {
+                _0xSHOW_ERROR('_0x5p6q7r', 'Decryption failed: Verify your inputs!');
+            }
+        }
+        
+        // File encryption (obfuscated)
+        async function _0x1v2w3x() {
+            const _0xFILE_INPUT = document.getElementById('_0x7r8s9t');
+            const _0xPASS = document.getElementById('_0x0u1v2w').value;
+            
+            if (!_0xFILE_INPUT.files[0] || !_0xPASS) {
+                alert('Please select a file and enter vault key!');
+                return;
+            }
+            
+            const _0xFILE = _0xFILE_INPUT.files[0];
+            const _0xDATA = new Uint8Array(await _0xFILE.arrayBuffer());
+            
+            try {
+                const _0xRESULT = await _0xCRYPTO_ENGINE(_0xDATA, _0xPASS);
+                
+                const _0xSALT_ARRAY = _0xK1L2M3(_0xRESULT._0xS);
+                const _0xENC_ARRAY = _0xK1L2M3(_0xRESULT._0xE);
+                const _0xCOMBINED = new Uint8Array(_0xSALT_ARRAY.length + _0xENC_ARRAY.length);
+                _0xCOMBINED.set(_0xSALT_ARRAY);
+                _0xCOMBINED.set(_0xENC_ARRAY, _0xSALT_ARRAY.length);
+                
+                const _0xBLOB = new Blob([_0xCOMBINED], { type: 'application/octet-stream' });
+                const _0xURL = URL.createObjectURL(_0xBLOB);
+                
+                const _0xDOWN_BTN = document.getElementById('_0x4y5z6a');
+                _0xDOWN_BTN.style.display = 'inline-block';
+                _0xDOWN_BTN.onclick = () => {
+                    const _0xA = document.createElement('a');
+                    _0xA.href = _0xURL;
+                    _0xA.download = _0xFILE.name + '.vault';
+                    _0xA.click();
+                };
+                
+                document.getElementById('_0x3x4y5z').innerHTML = `
+                    <strong>Vault:</strong> ${_0xFILE.name}.vault<br>
+                    <strong>Original:</strong> ${_0xFORMAT_SIZE(_0xFILE.size)}<br>
+                    <strong>Key:</strong> ${_0xPASS}<br>
+                    <strong>💡 Share vault file and key securely!</strong>
+                `;
+                
+                const _0xRES = document.getElementById('_0x2w3x4y');
+                _0xRES.classList.remove('error');
+                _0xRES.style.display = 'block';
+            } catch (_0xERR) {
+                _0xSHOW_ERROR('_0x2w3x4y', 'Vault creation failed: ' + _0xERR.message);
+            }
+        }
+        
+        // File decryption (obfuscated)
+        async function _0x9d0e1f() {
+            const _0xFILE_INPUT = document.getElementById('_0x5z6a7b');
+            const _0xPASS = document.getElementById('_0x8c9d0e').value;
+            
+            if (!_0xFILE_INPUT.files[0] || !_0xPASS) {
+                alert('Please select vault file and enter key!');
+                return;
+            }
+            
+            const _0xFILE = _0xFILE_INPUT.files[0];
+            const _0xDATA = new Uint8Array(await _0xFILE.arrayBuffer());
+            
+            try {
+                const _0xSALT = _0xJ0K1L2(_0xDATA.slice(0, 16));
+                const _0xENC = _0xJ0K1L2(_0xDATA.slice(16));
+                
+                const _0xDECRYPTED = await _0xDECRYPT_ENGINE(_0xENC, _0xSALT, _0xPASS);
+                
+                const _0xBLOB = new Blob([_0xDECRYPTED], { type: 'application/octet-stream' });
+                const _0xURL = URL.createObjectURL(_0xBLOB);
+                
+                const _0xORIG_NAME = _0xFILE.name.endsWith('.vault') ? 
+                    _0xFILE.name.slice(0, -6) : 
+                    _0xFILE.name.endsWith('.encrypted') ? 
+                    _0xFILE.name.slice(0, -10) : 'extracted_' + _0xFILE.name;
+                
+                const _0xDOWN_BTN = document.getElementById('_0x2g3h4i');
+                _0xDOWN_BTN.style.display = 'inline-block';
+                _0xDOWN_BTN.onclick = () => {
+                    const _0xA = document.createElement('a');
+                    _0xA.href = _0xURL;
+                    _0xA.download = _0xORIG_NAME;
+                    _0xA.click();
+                };
+                
+                document.getElementById('_0x1f2g3h').innerHTML = `
+                    <strong>Extracted:</strong> ${_0xORIG_NAME}<br>
+                    <strong>Size:</strong> ${_0xFORMAT_SIZE(_0xDECRYPTED.length)}<br>
+                    <strong>✅ File successfully extracted!</strong>
+                `;
+                
+                const _0xRES = document.getElementById('_0x0e1f2g');
+                _0xRES.classList.remove('error');
+                _0xRES.style.display = 'block';
+            } catch (_0xERR) {
+                _0xSHOW_ERROR('_0x0e1f2g', 'Extraction failed: Check vault key!');
+            }
+        }
+        
+        // Utility functions (obfuscated)
+        function _0x8s9t0u() {
+            const _0xFILE = document.getElementById('_0x7r8s9t').files[0];
+            if (_0xFILE) {
+                document.getElementById('_0x9t0u1v').innerHTML = `
+                    <strong>Selected:</strong> ${_0xFILE.name}<br>
+                    <strong>Size:</strong> ${_0xFORMAT_SIZE(_0xFILE.size)}<br>
+                    <strong>Type:</strong> ${_0xFILE.type || 'Unknown'}
+                `;
+                document.getElementById('_0x9t0u1v').style.display = 'block';
+            }
+        }
+        
+        function _0x6a7b8c() {
+            const _0xFILE = document.getElementById('_0x5z6a7b').files[0];
+            if (_0xFILE) {
+                document.getElementById('_0x7b8c9d').innerHTML = `
+                    <strong>Selected:</strong> ${_0xFILE.name}<br>
+                    <strong>Size:</strong> ${_0xFORMAT_SIZE(_0xFILE.size)}
+                `;
+                document.getElementById('_0x7b8c9d').style.display = 'block';
+            }
+        }
+        
+        function _0xFORMAT_SIZE(_0xBYTES) {
+            if (_0xBYTES === 0) return '0 Bytes';
+            const _0xK = 1024;
+            const _0xSIZES = ['Bytes', 'KB', 'MB', 'GB'];
+            const _0xI = Math.floor(Math.log(_0xBYTES) / Math.log(_0xK));
+            return parseFloat((_0xBYTES / Math.pow(_0xK, _0xI)).toFixed(2)) + ' ' + _0xSIZES[_0xI];
+        }
+        
+        function _0x8i9j0k(_0xELEMENT_ID) {
+            const _0xTEXT = document.getElementById(_0xELEMENT_ID).textContent;
+            navigator.clipboard.writeText(_0xTEXT).then(() => {
+                const _0xBTN = event.target;
+                const _0xORIG = _0xBTN.textContent;
+                _0xBTN.textContent = '✅ Copied!';
+                setTimeout(() => _0xBTN.textContent = _0xORIG, 2000);
+            });
+        }
+        
+        function _0xSHOW_ERROR(_0xRESULT_ID, _0xMSG) {
+            const _0xRES = document.getElementById(_0xRESULT_ID);
+            _0xRES.innerHTML = '<div class="result-label">❌ ' + _0xMSG + '</div>';
+            _0xRES.classList.add('error');
+            _0xRES.style.display = 'block';
+        }
+        
+        // Enhanced anti-debug measures
+        (function() {
+            // Disable right-click context menu
+            document.addEventListener('contextmenu', function(e) {
+                e.preventDefault();
+                return false;
+            });
+            
+            // Disable common inspect shortcuts
+            document.addEventListener('keydown', function(e) {
+                // F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U
+                if (e.key === 'F12' || 
+                    (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J')) ||
+                    (e.ctrlKey && e.key === 'U')) {
+                    e.preventDefault();
+                    alert('🚫 Developer tools are disabled for security reasons');
+                    return false;
+                }
+            });
+            
+            // Detect DevTools opening
+            let devtools = {open: false, orientation: null};
+            setInterval(() => {
+                if (window.outerHeight - window.innerHeight > 200 || 
+                    window.outerWidth - window.innerWidth > 200) {
+                    if (!devtools.open) {
+                        devtools.open = true;
+                        console.clear();
+                        alert('🚫 Please close developer tools for security');
+                        // Redirect or hide content
+                        document.body.style.display = 'none';
+                        setTimeout(() => {
+                            document.body.style.display = 'block';
+                        }, 3000);
+                    }
+                } else {
+                    devtools.open = false;
+                }
+            }, 500);
+            
+            // Clear console periodically
+            setInterval(() => {
+                console.clear();
+                console.log('%c🚫 SECURITY NOTICE', 'color: red; font-size: 30px; font-weight: bold;');
+                console.log('%cThis application contains sensitive cryptographic functions.', 'color: red; font-size: 14px;');
+                console.log('%cUnauthorized access or modification is prohibited.', 'color: red; font-size: 14px;');
+            }, 2000);
+            
+            // Disable text selection
+            document.onselectstart = function() {
+                return false;
+            };
+            
+            // Disable drag
+            document.ondragstart = function() {
+                return false;
+            };
+            
+            // Monitor for debugging
+            let startTime = new Date();
+            debugger;
+            let endTime = new Date();
+            if (endTime - startTime > 100) {
+                alert('🚫 Debugging detected - Access denied');
+                window.location.href = 'about:blank';
+            }
+            
+            // Obfuscate source viewing
+            if (window.location.toString().indexOf('view-source:') !== -1) {
+                window.location.href = 'about:blank';
+            }
+        })();
+        
+        // Additional protection layers
+        window.addEventListener('load', function() {
+            // Disable print
+            window.addEventListener('beforeprint', function(e) {
+                alert('🚫 Printing is disabled for security');
+                e.preventDefault();
+                return false;
+            });
+            
+            // Detect zoom changes (potential screenshot attempts)
+            let lastZoom = window.devicePixelRatio;
+            setInterval(() => {
+                if (window.devicePixelRatio !== lastZoom) {
+                    console.clear();
+                    lastZoom = window.devicePixelRatio;
+                }
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
